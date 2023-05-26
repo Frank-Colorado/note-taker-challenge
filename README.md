@@ -28,7 +28,11 @@ This application was create to complete challenge 11 for my coding bootcamp. Thi
 
 ## Visuals
 
+![image](https://github.com/Frank-Colorado/note-taker-challenge/assets/123683792/2aa54f0c-0549-4c18-9f20-96421e432df2)
+
 ## Website
+
+https://note-taker-challenge.herokuapp.com/notes
 
 ## Installation
 
