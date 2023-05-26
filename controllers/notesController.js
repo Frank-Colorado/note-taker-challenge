@@ -20,7 +20,7 @@ const getNotes = (req, res) => {
 // This is a function called createNote that takes in the request and response objects as parameters.
 const createNote = (req, res) => {
   // destructure the note from the request body
-  const { id, title, text } = req.body;
+  const { title, text } = req.body;
   // fs.readFile() method reads the notes from db.json file
   fs.readFile(
     // path.join() method joins the path of the current file (notesController.js) with the path to the db.json file
@@ -35,7 +35,7 @@ const createNote = (req, res) => {
       // parse the notes from the db.json file
       const parsedNotes = JSON.parse(notes);
       // set the id of the new note to the length of the parsedNotes array + 1
-      id = parsedNotes.length + 1;
+      const id = parsedNotes.length + 1;
       // add the new note the user sent to the parsedNotes array
       parsedNotes.push({ id, title, text });
       // fs.writeFile() method writes the notes to db.json file
@@ -73,9 +73,13 @@ const deleteNote = (req, res) => {
       }
       // parse the notes from the db.json file
       const parsedNotes = JSON.parse(notes);
+
       // filter the parsedNotes array to remove the note with the id the user sent
-      const filteredNotes = parsedNotes.filter((note) => note.id !== id);
+      const filteredNotes = parsedNotes.filter(
+        (note) => note.id !== parseInt(id)
+      );
       // fs.writeFile() method writes the notes to db.json file
+
       fs.writeFile(
         // path.join() method joins the path of the current file (notesController.js) with the path to the db.json file
         path.join(__dirname, "..", "db", "db.json"),
