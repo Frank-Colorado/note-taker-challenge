@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "My first note",
+    "text": "This is my first test note"
+  },
+  {
+    "id": 2,
+    "title": "My second note",
+    "text": "This is my second test note"
+  }
+]
